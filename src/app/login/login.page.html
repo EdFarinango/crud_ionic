@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="ion-justify-content-center">ESFOT</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-row class="ion-justify-content-center">
+        <img src="../../assets/images/buho.png" width="120px" height="auto" />
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+        <p>
+            <strong>¡Bienvenido!</strong>
+
+        </p>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+        <p>
+            <small>Ingresa tus datos para continuar</small>
+
+        </p>
+
+    </ion-row>
+
+
+
+    <form (ngSubmit)="login()" [formGroup]="credentials">
+
+
+        <ion-item fill="solid" class="ion-margin-bottom">
+            <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+
+            <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Debe ingresar un correo valido</ion-note>
+        </ion-item>
+        <ion-item fill="solid" class="ion-margin-bottom">
+            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+            <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener mas de 6 caracteres</ion-note>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Iniciar sesión</ion-button>
+
+    </form>
+</ion-content>

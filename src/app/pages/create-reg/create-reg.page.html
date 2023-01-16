@@ -1,0 +1,195 @@
+<ion-header class="l">
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button (click)="logout()">
+                <ion-icon slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title> Zona Académica </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<div class="preview">
+    <ion-avatar>
+        <img src="../../../assets/images/estudio.png">
+
+    </ion-avatar>
+</div>
+
+
+<ion-card-header>
+    <ion-card-title>Datos Académicos</ion-card-title>
+    <ion-card-subtitle>{{ text }}</ion-card-subtitle>
+</ion-card-header>
+<ion-card>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmitEdit()">
+        <ion-item>
+            <ion-label class="form-label">Usuario: </ion-label>
+            <ion-input class="form-control" formControlName="user" [disabled]="true"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating" class="form-label">Fecha de registro</ion-label>
+            <ion-input class="form-control" formControlName="date" [disabled]='true'></ion-input>
+
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating" class="form-label">Nombre de la asignatura</ion-label>
+            <ion-input class="form-control" formControlName="materia"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating" class="form-label">Nombre del docente</ion-label>
+            <ion-input class="form-control" formControlName="docente"></ion-input>
+        </ion-item>
+
+
+        <ion-grid>
+
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating" class="form-label">Aula</ion-label>
+                        <ion-input class="form-control" formControlName="aula"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+
+                    <ion-item>
+                        <ion-label position="floating" class=" form-label "># de Horas</ion-label>
+                        <ion-input class="form-control" formControlName="horas"></ion-input>
+                    </ion-item>
+
+                </ion-col>
+            </ion-row>
+
+
+
+
+
+
+
+        </ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <ion-item>
+            <ion-button type="submit " expand="block " color="primary " [disabled]="formulario.invalid ">Guardar</ion-button>
+        </ion-item>
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+    <ion-item>
+        <ion-button type="submit " expand="block " color="primary " (click)="verList()">Ver Registros</ion-button>
+    </ion-item>
+</ion-card>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div> 
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Datos</ion-card-title>
+            <ion-card-subtitle>Ingresa la información</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating ">Nombres</ion-label>
+                    <ion-input #name> </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating ">Apellidos</ion-label>
+                    <ion-input #lastname> </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating ">Número de Cédula</ion-label>
+                    <ion-input #cedula> </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating ">Cantidad de miembros que pertenecen a la familia</ion-label>
+                    <ion-input #number> </ion-input>
+                </ion-item>
+                <div class="ion-padding " style="text-align: center ">
+                    <ion-label>Coordenadas</ion-label>
+                </div>
+                <ion-grid>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label>Latitud: {{lat}}</ion-label>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item>
+                                <ion-item>
+                                    <ion-label>Longitud: {{lng}}</ion-label>
+                                </ion-item>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+
+                    <ion-item>
+                        <ion-button expand="full " (click)="getCurrentPosition() ">Detectar ubicación</ion-button>
+                    </ion-item>
+
+                </ion-grid>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="full " (click)="sendInfo(name.value, lastname.value, cedula.value, number.value) ">Guardar</ion-button>
+</div>
+-->

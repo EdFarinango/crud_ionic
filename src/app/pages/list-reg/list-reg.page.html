@@ -1,0 +1,175 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Lista de materias del estudiante</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Lista de materias</ion-card-title>
+            <ion-card-subtitle>
+                <p>Agrega una nueva materia </p>
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+
+            </ion-card-subtitle>
+
+
+
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list *ngFor="let info of data">
+
+                <ion-item>
+                    <ion-thumbnail slot="start">
+                        <img alt="Silhouette of mountains" src="../../../assets/images/libros.png" />
+                    </ion-thumbnail>
+                    <ion-label>{{info.materia}}</ion-label>
+
+
+
+
+
+
+                    <ion-card>
+                        <img alt="Silhouette of mountains" src="../../../assets/images/buh.png" />
+                        <ion-card-header>
+
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <ion-label position="floating">Docente</ion-label>
+                            <ion-input type="text" [(ngModel)]="info.docente"></ion-input>
+                            <ion-label position="floating">Aula</ion-label>
+                            <ion-input type="text" [(ngModel)]="info.aula"></ion-input>
+                            <ion-label position="floating ">Horas</ion-label>
+                            <ion-input type="text" [(ngModel)]="info.horas"></ion-input>
+
+                        </ion-card-content>
+                        <ion-icon name="trash-outline" (click)="deleteInfo(info)" style="zoom:4.0;"></ion-icon>
+
+
+                        <ion-icon name="create" [routerLink]="[ '/edit-reg/', info.id]" style="zoom:4.0;"></ion-icon>
+                    </ion-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ion-item>
+
+
+            </ion-list>
+        </ion-card-content>
+
+    </ion-card>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+        <ion-fab-button>
+            <ion-icon name="add" (click)="nuevoRegistro()"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+
+
+</ion-content>
+
+<!-- 
+
+     <ion-item>
+            <ion-label class="form-label ">Imagen: </ion-label>
+            <ion-input type="file " position="floating " (change)="uploadImage($event) "></ion-input>
+
+
+        </ion-item>
+<ion-icon name="eye-outline " expand="block " (click)="setOpen(true) "></ion-icon>
+                    <ion-modal [isOpen]=" isModalOpen ">
+                        <ng-template>
+                            <ion-header>
+                                <ion-toolbar>
+                                    <ion-title>{{info.materia}}</ion-title>
+                                    <ion-buttons slot="end ">
+                                        <ion-button (click)="setOpen(false) ">Close</ion-button>
+                                    </ion-buttons>
+                                </ion-toolbar>
+                            </ion-header>
+                            <ion-content class="ion-padding ">
+                                <ion-item>
+                                    <ion-label position="floating ">Docente</ion-label>
+                                    <ion-input type="text " [(ngModel)]="info.docente "></ion-input>
+                                    <ion-label position="floating ">Aula</ion-label>
+                                    <ion-input type="text " [(ngModel)]="info.aula "></ion-input>
+                                    <ion-label position="floating ">Horas</ion-label>
+                                    <ion-input type="text " [(ngModel)]="info.horas "></ion-input>
+
+
+
+                                </ion-item>
+                            </ion-content>
+                        </ng-template>
+                    </ion-modal>
+                    <ion-icon name="trash-outline " (click)="deleteInfo(info) "></ion-icon>
+
+
+
+
+
+<ion-grid [fixed]=" true ">
+    <ion-row>
+        <ion-col>Materia</ion-col>
+        <ion-col>Docente</ion-col>
+        <ion-col>Aula</ion-col>
+        <ion-col>Horas</ion-col>
+
+        <ion-col>Usuario</ion-col>
+        <ion-col>Fecha</ion-col>
+
+    </ion-row>
+    <ion-button (click)="nuevoRegistro() ">Agregar Registro</ion-button>
+    <ion-row *ngFor="let info of data ">
+        <ion-col>{{info.materia}}</ion-col>
+        <ion-col>{{info.docente}}</ion-col>
+        <ion-col>{{info.aula}}</ion-col>
+        <ion-col>{{info.horas}}</ion-col>
+
+        <ion-col>{{info.user}}</ion-col>
+
+        <ion-col>{{info.date}}</ion-col>
+        <ion-col>
+
+            <ion-button (click)="deleteInfo(info) ">Eliminar</ion-button>
+
+
+
+
+
+
+
+
+
+
+
+        </ion-col>
+
+    </ion-row>
+
+</ion-grid> -->
